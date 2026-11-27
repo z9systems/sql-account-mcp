@@ -1,0 +1,32 @@
+# Smithery configuration: https://smithery.ai/docs/config#smitheryyaml
+startCommand:
+  type: stdio
+  configSchema:
+    type: object
+    required:
+      - accessKey
+      - secretKey
+    properties:
+      accessKey:
+        type: string
+        description: Access key of your SQL Account API user (Tools > Maintain User > More > API Secret Key)
+      secretKey:
+        type: string
+        description: Secret key of your SQL Account API user
+      baseUrl:
+        type: string
+        default: https://api.sql.my
+        description: SQL Account API address. Change only if SQL Account gives you another one.
+  commandFunction: |-
+    (config) => ({
+      command: 'node',
+      args: ['src/index.js'],
+      env: {
+        SQLACC_ACCESS_KEY: config.accessKey,
+        SQLACC_SECRET_KEY: config.secretKey,
+        SQLACC_BASE_URL: config.baseUrl || 'https://api.sql.my'
+      }
+    })
+  exampleConfig:
+    accessKey: AKIAEXAMPLE
+    secretKey: example-secret

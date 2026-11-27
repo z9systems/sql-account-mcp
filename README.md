@@ -58,6 +58,13 @@ claude mcp add sql-account -e SQLACC_ACCESS_KEY=... -e SQLACC_SECRET_KEY=... -- 
 
 Cursor, Windsurf and other clients use the same command, arguments and environment variables.
 
+**Docker:**
+
+```
+docker build -t sql-account-mcp https://github.com/z9systems/sql-account-mcp.git
+docker run -i --rm -e SQLACC_ACCESS_KEY=... -e SQLACC_SECRET_KEY=... sql-account-mcp
+```
+
 ### Settings
 
 | Variable | Default | |
