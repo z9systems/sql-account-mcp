@@ -40,7 +40,7 @@ Add this to your MCP client. For **Claude Desktop**, edit `claude_desktop_config
   "mcpServers": {
     "sql-account": {
       "command": "npx",
-      "args": ["-y", "github:z9systems/sql-account-mcp"],
+      "args": ["-y", "sql-account-mcp"],
       "env": {
         "SQLACC_ACCESS_KEY": "your access key",
         "SQLACC_SECRET_KEY": "your secret key"
@@ -53,7 +53,7 @@ Add this to your MCP client. For **Claude Desktop**, edit `claude_desktop_config
 **Claude Code:**
 
 ```
-claude mcp add sql-account -e SQLACC_ACCESS_KEY=... -e SQLACC_SECRET_KEY=... -- npx -y github:z9systems/sql-account-mcp
+claude mcp add sql-account -e SQLACC_ACCESS_KEY=... -e SQLACC_SECRET_KEY=... -- npx -y sql-account-mcp
 ```
 
 Cursor, Windsurf and other clients use the same command, arguments and environment variables.

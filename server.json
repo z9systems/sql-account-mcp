@@ -1,0 +1,25 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-09-29/server.schema.json",
+  "name": "io.github.z9systems/sql-account-mcp",
+  "title": "SQL Account (read-only)",
+  "description": "Read-only access to SQL Account (SQL Accounting): customers, stock, invoices and payments via its REST API.",
+  "repository": {
+    "url": "https://github.com/z9systems/sql-account-mcp",
+    "source": "github"
+  },
+  "websiteUrl": "https://z9systems.com",
+  "version": "0.1.0",
+  "packages": [
+    {
+      "registryType": "npm",
+      "identifier": "sql-account-mcp",
+      "version": "0.1.0",
+      "transport": { "type": "stdio" },
+      "environmentVariables": [
+        { "name": "SQLACC_ACCESS_KEY", "description": "Access key of your SQL Account API user", "isRequired": true, "isSecret": true },
+        { "name": "SQLACC_SECRET_KEY", "description": "Secret key of your SQL Account API user", "isRequired": true, "isSecret": true },
+        { "name": "SQLACC_BASE_URL", "description": "SQL Account API address (default https://api.sql.my)", "isRequired": false }
+      ]
+    }
+  ]
+}
